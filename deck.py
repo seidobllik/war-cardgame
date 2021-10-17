@@ -46,7 +46,7 @@ class Deck():
 
     def draw_card(self):
         '''
-        Removes a random card from the deck.
+        Removes the card at index zero from the deck.
 
             args:
                 None
@@ -54,13 +54,12 @@ class Deck():
             returns:
                 Card object that was removed from the deck.
         '''
-        card = random.sample(self.cards, 1)[0]
-        self.cards.remove(card)
+        card = self.cards.pop(0)
         return Card(card.value, card.suit)
 
     def return_card(self, card):
         '''
-        Returns a Card object to the Deck.
+        Returns a Card object to end of the Deck.
 
             args:
                 card (Card): The Card object to be returned to the Deck.
